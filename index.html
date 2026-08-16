@@ -3,24 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Game</title>
+
+    <title>Chess Arena</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="game-container">
+    <main class="game-container">
 
-        <h1>♟ Chess Game</h1>
+        <header class="top-bar">
+            <div>
+                <h1>♟ Chess Arena</h1>
+                <p class="subtitle">Local 2 Player</p>
+            </div>
 
-        <p id="status">White's Turn</p>
+            <div id="turnIndicator" class="turn-indicator white-turn">
+                White's Turn
+            </div>
+        </header>
 
-        <div id="board"></div>
+        <section class="game-layout">
 
-        <button id="reset">New Game</button>
+            <div class="board-section">
 
-    </div>
+                <div class="player player-black">
+                    <div class="player-icon">♚</div>
+
+                    <div>
+                        <strong>Black</strong>
+                        <span id="blackStatus">Waiting</span>
+                    </div>
+                </div>
+
+                <div class="board-wrapper">
+
+                    <div class="rank-labels">
+                        <span>8</span>
+                        <span>7</span>
+                        <span>6</span>
+                        <span>5</span>
+                        <span>4</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>1</span>
+                    </div>
+
+                    <div id="board"></div>
+
+                    <div class="file-labels">
+                        <span>a</span>
+                        <span>b</span>
+                        <span>c</span>
+                        <span>d</span>
+                        <span>e</span>
+                        <span>f</span>
+                        <span>g</span>
+                        <span>h</span>
+                    </div>
+
+                </div>
+
+                <div class="player player-white">
+                    <div class="player-icon">♔</div>
+
+                    <div>
+                        <strong>White</strong>
+                        <span id="whiteStatus">Your Turn</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <aside class="game-panel">
+
+                <div class="status-card">
+
+                    <span class="status-label">GAME STATUS</span>
+
+                    <h2 id="status">
+                        White's Turn
+                    </h2>
+
+                    <p id="message">
+                        Select a piece to make a move.
+                    </p>
+
+                </div>
+
+                <div class="moves-card">
+
+                    <div class="card-header">
+                        <h3>Move History</h3>
+                        <span id="moveCount">0</span>
+                    </div>
+
+                    <div id="moveHistory" class="move-history">
+                        <p class="empty-history">
+                            No moves yet
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="controls">
+
+                    <button id="reset" class="primary-button">
+                        ↻ New Game
+                    </button>
+
+                    <button id="resign" class="danger-button">
+                        ⚑ Resign
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <footer>
+            <p>Chess Arena • Local Multiplayer</p>
+        </footer>
+
+    </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
